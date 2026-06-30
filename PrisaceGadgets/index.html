@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Millenial Store</title>
+    <meta name="description" content="E-Millenial Store - Gadgets for Millennials in Africa">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="./Images/EMS.svg" alt="E-Millenial Store Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+            <div class="cart-btn" id="cartBtn">
+                <img src="./Images/cart.svg" alt="Cart">
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <header class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Gadgets for the modern millenial</h1>
+                <p>Get the best gadgets at the best prices with fast delivery.</p>
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+            </div>
+            <div class="hero-img">
+                <img src="./Images/heroImage.png" alt="Hero Gadgets">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>E-Millenial Store is your number one destination for gadgets in Africa. We cater to the tech-savvy
+                generation providing top-tier electronics, mobile devices, and accessories.</p>
+        </div>
+    </section>
+
+    <!-- Products/Shop Section -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be injected here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./Images/EMS.svg" alt="E-Millenial Store Logo">
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2026 E-Millenial Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-content cart-modal">
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+            <h2>Shopping Cart</h2>
+
+            <div class="cart-body">
+                <!-- Items Section -->
+                <div class="cart-items-section">
+                    <h3>Items</h3>
+                    <div class="cart-items" id="cartItemsContainer">
+                        <!-- Cart items will be injected here -->
+                    </div>
+                </div>
+
+                <!-- User Details Section -->
+                <div class="user-details-section">
+                    <h3>User Details</h3>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="userName">Name</label>
+                            <input type="text" id="userName" name="name" required>
+                            <small class="error-msg"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email</label>
+                            <input type="email" id="userEmail" name="email" required>
+                            <small class="error-msg"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="userPhone">Phone Number</label>
+                            <input type="tel" id="userPhone" name="phone" minlength="10" required>
+                            <small class="error-msg"></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Total Amount Section -->
+            <div class="cart-total-section">
+                <h3>Total: <span id="cartTotalValue">GH₵0</span></h3>
+            </div>
+
+            <!-- Actions Section -->
+            <div class="cart-actions-section">
+                <button class="btn btn-secondary" id="continueShoppingBtn">Continue Shopping</button>
+                <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Modal -->
+    <div class="modal-overlay" id="summaryModal">
+        <div class="modal-content summary-modal">
+            <div class="success-icon">
+                <img src="./Images/check.svg" alt="Success"
+                    style="width: 64px; height: 64px; background: var(--primary-color); border-radius: 50%; padding: 10px; margin: 0 auto 20px auto; display: block;">
+            </div>
+            <h2 style="text-align: center;">Payment Successful!</h2>
+            <p id="summaryMessage" style="text-align: center; margin-bottom: 20px;"></p>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <ul id="summaryItemsList">
+                    <!-- Summary items will be injected here -->
+                </ul>
+            </div>
+
+            <button class="btn btn-primary" id="summaryOkBtn" style="width: 100%; margin-top: 20px;">Ok</button>
+        </div>
+    </div>
+
+    <!-- Paystack Inline JS -->
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
